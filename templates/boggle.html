@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/boggle.css">
+    <title>Boggle!</title>
+</head>
+
+<body>
+    <form class="ref" action="/refresh">
+        <button class="ref">&#11119;</button>
+    </form>
+
+    <div class="score-display">
+
+        <p>Board score: {{score}}</p>
+
+    </div>
+    <br>
+
+
+
+    {% for msg in get_flashed_messages() %}
+
+    <div class="msg-display">{{msg}}</div>
+
+    {% endfor %}
+
+    <div class='ans-display'></div>
+
+    <form action="/guess" method="post">
+        <input type="text" placeholder="Boggle" name="guess" required>
+        <button>&#129054;</button>
+    </form>
+    <br>
+    <table>
+        {% for row in board %}
+
+        <tr>
+
+            {% for letter in row %}
+            <td>{{letter}}</td>
+            {% endfor %}
+
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    <div id='guess-display'>
+        <h3>Guesses:</h3>
+        <span>&nbsp;-&nbsp;</span>
+        {% for ans in prev_ans %}
+        <span>{{ans}}</span>
+        <span>&nbsp;-&nbsp;</span>
+        {% endfor %}
+    </div>
+
+
+</body>
+
+<script link='static/app.js'></script>
+
+</html>

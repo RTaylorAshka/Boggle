@@ -1,0 +1,131 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(255, 238, 216);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border: none;
+    outline: none;
+}
+
+form.ref {
+    display: flex;
+    position: fixed;
+    justify-content: left;
+    align-content: left;
+    margin: 10px;
+    padding: 0px;
+    border: none;
+    outline: none;
+}
+
+input {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: none;
+    text-align: center;
+
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    outline: none;
+}
+
+input:focus {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    outline: none;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+td {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    width: 7rem;
+    height: 7rem;
+    font-size: 4rem;
+    border-style: solid;
+    border-width: 3px;
+}
+
+tr {
+    padding: 0px;
+    margin: 0px;
+}
+
+button.ref {
+    display: flex;
+    float: left;
+    position: relative;
+    transform: translateX(0rem);
+    margin: 0px;
+}
+
+button {
+    background: none;
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    font-size: 3rem;
+    text-align: center;
+    position: fixed;
+    transform: translateX(20rem);
+}
+
+button:hover {
+    color: rgb(99, 96, 88);
+    /* transform: scale(110%); */
+
+}
+
+div.score-display {
+    display: flex;
+    justify-content: left;
+    font-weight: bold;
+    position: absolute;
+    /* float: left; */
+    margin: 10px;
+    margin-top: 80px;
+    padding: 0px;
+
+}
+
+p {
+    float: left;
+    padding: 10px;
+}
+
+div.msg-display {
+    display: flex;
+    justify-content: left;
+    position: fixed;
+    float: left;
+    margin: 10px;
+    margin-top: 150px;
+    padding: 0px;
+}
+
+#guess-display {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+}
