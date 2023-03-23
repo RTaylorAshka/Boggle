@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/boggle.css">
+    <link rel="stylesheet" href="/static/boggle.css">
     <title>Boggle!</title>
 </head>
 
@@ -14,12 +14,22 @@
         <button class="ref">&#11119;</button>
     </form>
 
+    <div class='timer'>
+
+        <h1 class='timer'>Time: </h1>
+    </div>
+
     <div class="score-display">
 
         <p>Board score: {{score}}</p>
+        <br>
+        <p class='hs'>Highscore: {{high_score}}</p>
+        <br>
+        <p class='gp'>Games Played: {{games}}</p>
 
     </div>
     <br>
+
 
 
 
@@ -31,7 +41,7 @@
 
     <div class='ans-display'></div>
 
-    <form action="/guess" method="post">
+    <form action="/guess" method="post" class="guess">
         <input type="text" placeholder="Boggle" name="guess" required>
         <button>&#129054;</button>
     </form>
@@ -50,18 +60,22 @@
         {% endfor %}
     </table>
 
-    <div id='guess-display'>
-        <h3>Guesses:</h3>
+    <footer id='guess-display'>
+        <h2>Guesses:</h2>
         <span>&nbsp;-&nbsp;</span>
         {% for ans in prev_ans %}
         <span>{{ans}}</span>
         <span>&nbsp;-&nbsp;</span>
         {% endfor %}
-    </div>
+    </footer>
 
+
+
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src='/static/app.js'></script>
 
 </body>
 
-<script link='static/app.js'></script>
+
 
 </html>
