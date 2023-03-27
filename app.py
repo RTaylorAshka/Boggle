@@ -76,27 +76,18 @@ def game_board():
 
 @app.route('/guess', methods = ['POST'])
 def handle_guess():
-
-    
-
-    guess = request.form.get('guess', False)
+    guess = request.json['guess']
     check_res = current_game.game.check_valid_word(current_game.get_board(session), guess)
     if check_res != 'ok':
-        flash(f'{check_res}')
-
-        return redirect('/')
+        return {"outcome":"error","reason":"word not valid"}
     
     elif current_game.check_prev_answers(session, guess) == False:
-        flash(f'{guess} has already been guessed!')
-        return redirect('/') 
+         return {"outcome":"error","reason":"word already guessed"}
 
     elif check_res == 'ok':
         session['score'] = current_game.get_score(session)  + 1
-        
-
-        return redirect('/') 
     
-    return redirect('/') 
+    return {"outcome":"success"}
 
 
 @app.route('/refresh')

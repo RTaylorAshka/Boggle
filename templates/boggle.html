@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <div id="error-div"></div>
+
     <form class="ref" action="/refresh">
         <button class="ref">&#11119;</button>
     </form>
@@ -21,11 +23,10 @@
 
     <div class="score-display">
 
-        <p>Board score: {{score}}</p>
+        <p>Board score: <span id="score">0</span></p>
         <br>
-        <p class='hs'>Highscore: {{high_score}}</p>
-        <br>
-        <p class='gp'>Games Played: {{games}}</p>
+        <p class='hs'>Highscore: <span id="h-score"></span></p>
+        
 
     </div>
     <br>
@@ -33,16 +34,12 @@
 
 
 
-    {% for msg in get_flashed_messages() %}
 
-    <div class="msg-display">{{msg}}</div>
-
-    {% endfor %}
 
     <div class='ans-display'></div>
 
-    <form action="/guess" method="post" class="guess">
-        <input type="text" placeholder="Boggle" name="guess" required>
+    <form id="guess">
+        <input id="text-guess" type="text" placeholder="Boggle" name="guess" required>
         <button>&#129054;</button>
     </form>
     <br>
